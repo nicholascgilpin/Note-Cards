@@ -25,3 +25,5 @@ proguard/
 
 # Log Files
 *.log
+
+NoteCardApplication/app/src/main/java/com/fakecompany/ncluck/notecardapplication/Deck.java
