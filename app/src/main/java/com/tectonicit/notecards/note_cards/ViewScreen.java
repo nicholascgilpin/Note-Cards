@@ -24,7 +24,11 @@ public class ViewScreen extends AppCompatActivity {
         setContentView(R.layout.activity_view_screen);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
+<<<<<<< HEAD
         //loadData();
+=======
+
+>>>>>>> origin/master
         Button backButton = (Button)findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
