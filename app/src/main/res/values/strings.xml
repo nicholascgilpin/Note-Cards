@@ -62,7 +62,7 @@
     <string name="nameHint">Project Name</string>
     <string name="descriptionHint">Short Description of Project</string>
     <string name="radButtonText">Length of Project</string>
-    <string name="costHint">Predicted Cost</string>
+    <string name="costHint">Predicted Cost($)</string>
     <string name="radShortText">Short</string>
     <string name="radMedText">Medium</string>
     <string name="radLongText">Long</string>

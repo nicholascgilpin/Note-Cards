@@ -8,9 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dougl.dougnotecard.ViewScreen"
-    tools:showIn="@layout/activity_view_screen">
-
+    tools:context="com.tectonicit.notecards.note_cards.ViewScreen">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,7 +17,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
-        android:autoText="false"
         android:minWidth="200dp" />
 
     <TextView
@@ -80,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:background="#000000"
+        android:src="@drawable/ic_info_black_24dp"
         android:minHeight="150dp"
         android:minWidth="150dp"
         android:layout_alignParentBottom="true"
