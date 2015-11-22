@@ -118,7 +118,9 @@
         android:minWidth="100dp"
         android:layout_above="@+id/galleryButton"
         android:layout_toRightOf="@+id/nameBox"
-        android:layout_toEndOf="@+id/nameBox" />
+        android:layout_toEndOf="@+id/nameBox"
+        android:maxHeight="100dp"
+        android:maxWidth="100dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"

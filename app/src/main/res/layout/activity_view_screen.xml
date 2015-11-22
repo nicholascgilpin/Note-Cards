@@ -84,7 +84,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="48dp"
-        android:onClick="zoomIn()" />
+        android:onClick="zoomIn()"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
