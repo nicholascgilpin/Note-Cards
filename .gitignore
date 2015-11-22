@@ -25,3 +25,7 @@ proguard/
 
 # Log Files
 *.log
+app/app.iml
+.idea/libraries/support_v4_23_1_1.xml
+.idea/libraries/appcompat_v7_23_1_1.xml
+.idea/workspace.xml
