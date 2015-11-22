@@ -58,4 +58,15 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+    <!--Strings for view and edit-->
+    <string name="nameHint">Project Name</string>
+    <string name="descriptionHint">Short Description of Project</string>
+    <string name="radButtonText">Length of Project</string>
+    <string name="costHint">Predicted Cost</string>
+    <string name="radShortText">Short</string>
+    <string name="radMedText">Medium</string>
+    <string name="radLongText">Long</string>
+    <string name="saveButtonText">Save</string>
+    <string name="title_activity_view_screen">ViewScreen</string>
+
 </resources>
