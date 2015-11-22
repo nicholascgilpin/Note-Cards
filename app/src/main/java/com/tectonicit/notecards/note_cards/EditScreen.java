@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 public class EditScreen extends AppCompatActivity {
@@ -34,6 +37,7 @@ public class EditScreen extends AppCompatActivity {
                 length="Short";
             }
         });
+
         final RadioButton radMed = (RadioButton)findViewById(R.id.radMed);
         radMed.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,16 +64,7 @@ public class EditScreen extends AppCompatActivity {
         startActivity(intent);
     }
     private void saveData() {
-        try{
-            PrintWriter out = new PrintWriter("savedCards.txt");
-            out.write(name+"\r\n");
-            out.write(description+"\r\n");
-            out.write(cost+"\r\n");
-            out.write(length+"\r\n");
-            out.close();
-        }catch(Exception err){
-            err.printStackTrace();
-        }
+        //change array values and write to file(clear 1st)
         goToViewScreen();
     }
 }

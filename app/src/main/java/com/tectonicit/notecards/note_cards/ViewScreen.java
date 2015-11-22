@@ -18,15 +18,13 @@ public class ViewScreen extends AppCompatActivity {
     private String description;
     private String cost;
     private String length;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadData();
         setContentView(R.layout.activity_view_screen);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+        //loadData();
         Button backButton = (Button)findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,13 +40,13 @@ public class ViewScreen extends AppCompatActivity {
             }
         });
         TextView nameBox = (TextView)findViewById(R.id.nameBox);
-        nameBox.setText("Test");
+        nameBox.setText("Test Title");
         TextView costBox = (TextView)findViewById(R.id.costBox);
-        nameBox.setText(cost);
+        costBox.setText("404");
         TextView descriptionBox = (TextView)findViewById(R.id.descriptionBox);
-        nameBox.setText(description);
+        descriptionBox.setText("Test Description");
         TextView lengthBox = (TextView)findViewById(R.id.lengthBox);
-        nameBox.setText(length);
+        lengthBox.setText("Test Length");
     }
     private void goToMainActivity(){
         Intent intent= new Intent(this,EditScreen.class);   //change to main
@@ -58,18 +56,8 @@ public class ViewScreen extends AppCompatActivity {
         Intent intent= new Intent(this,EditScreen.class);
         startActivity(intent);
     }
-    private void loadData(){
-        try {
-            FileInputStream fstream = new FileInputStream("savedCards.txt");
-            DataInputStream in = new DataInputStream(fstream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in));
-            name=br.readLine();
-            description=br.readLine();
-            cost=br.readLine();
-            length=br.readLine();
-        }catch(Exception err){
-            err.printStackTrace();
-        }
-    }
+    /*private void loadData(){
+      load data from array into local varibles(maybe)
+    }*/
 
 }
