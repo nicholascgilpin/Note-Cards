@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Note Card Application</string>
+    <string name="app_name">Note com.tectonicit.notecards.note_cards.Card Application</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
