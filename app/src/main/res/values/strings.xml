@@ -68,5 +68,6 @@
     <string name="radLongText">Long</string>
     <string name="saveButtonText">Save</string>
     <string name="title_activity_view_screen">ViewScreen</string>
+    <string name="title_activity_home_screen">HomeScreen</string>
 
 </resources>
