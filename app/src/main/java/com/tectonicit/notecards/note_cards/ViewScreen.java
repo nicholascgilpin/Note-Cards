@@ -24,8 +24,8 @@ public class ViewScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         loadData();
         setContentView(R.layout.activity_view_screen);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         Button backButton = (Button)findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
