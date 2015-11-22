@@ -1,16 +1,21 @@
 package com.tectonicit.notecards.note_cards;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 
 public class ViewScreen extends AppCompatActivity {
@@ -18,6 +23,9 @@ public class ViewScreen extends AppCompatActivity {
     private String description;
     private String cost;
     private String length;
+    private String imageName="ic_notifications_black_24dp.png";
+    private String imageLoc;
+    private Bitmap image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +33,7 @@ public class ViewScreen extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
         //loadData();
+        loadImage(imageLoc, imageName);
         Button backButton = (Button)findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +56,8 @@ public class ViewScreen extends AppCompatActivity {
         descriptionBox.setText("Test Description");
         TextView lengthBox = (TextView)findViewById(R.id.lengthBox);
         lengthBox.setText("Test Length");
+        ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        imageView.setImageBitmap(image);
     }
     private void goToMainActivity(){
         Intent intent= new Intent(this,EditScreen.class);   //change to main
@@ -56,8 +67,17 @@ public class ViewScreen extends AppCompatActivity {
         Intent intent= new Intent(this,EditScreen.class);
         startActivity(intent);
     }
-    /*private void loadData(){
-      load data from array into local varibles(maybe)
-    }*/
+    private void loadImage(String path, String imageName)
+    {
+        try {
+            File f=new File(path, imageName);
+            image = BitmapFactory.decodeStream(new FileInputStream(f));
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+
+    }
 
 }

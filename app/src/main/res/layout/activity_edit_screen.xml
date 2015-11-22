@@ -57,7 +57,8 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView"
         android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView">
+        android:layout_alignEnd="@+id/textView"
+        android:id="@+id/radioGroup">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -104,5 +105,29 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:longClickable="false"
-        android:onClick="save()" />
+        android:onClick="save()"/>
+        <!--android:src="private String saveToInternalSorage(Bitmap bitmapImage){         ContextWrapper cw = new ContextWrapper(getApplicationContext());          // path to /data/data/yourapp/app_data/imageDir         File directory = cw.getDir(&quot;imageDir&quot;, Context.MODE_PRIVATE);         // Create imageDir         File mypath=new File(directory,&quot;profile.jpg&quot;);          FileOutputStream fos = null;         try {                         fos = new FileOutputStream(mypath);         // Use the compress method on the BitMap object to write image to the OutputStream             bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);             fos.close();         } catch (Exception e) {             e.printStackTrace();         }         return directory.getAbsolutePath();     }" />
+        -->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/ic_info_black_24dp"
+        android:minHeight="100dp"
+        android:minWidth="100dp"
+        android:layout_above="@+id/galleryButton"
+        android:layout_toRightOf="@+id/nameBox"
+        android:layout_toEndOf="@+id/nameBox" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Image"
+        android:id="@+id/galleryButton"
+        android:layout_alignBottom="@+id/radioGroup"
+        android:layout_alignRight="@+id/descriptionBox"
+        android:layout_alignEnd="@+id/descriptionBox"
+        android:onClick="openGallery()" />
 </RelativeLayout>
