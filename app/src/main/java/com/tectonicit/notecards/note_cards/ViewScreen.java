@@ -17,13 +17,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
+import java.util.Vector;
 
 public class ViewScreen extends AppCompatActivity {
     private String name;
     private String description;
     private String cost;
     private String length;
-    private String imageName="ic_notifications_black_24dp.png";
+    private String imageName="picture.jpg";//"ic_notifications_black_24dp.png";
     private String imageLoc;
     private Bitmap image;
     @Override
@@ -33,6 +34,13 @@ public class ViewScreen extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
         //loadData();
+        Bundle b=this.getIntent().getExtras();
+        String[] data=b.getStringArray("key");
+        name= data[0];
+        description=data[1];
+        cost=data[2];
+        length= data[3];
+        imageLoc= data[4];
         loadImage(imageLoc, imageName);
         Button backButton = (Button)findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -49,13 +57,13 @@ public class ViewScreen extends AppCompatActivity {
             }
         });
         TextView nameBox = (TextView)findViewById(R.id.nameBox);
-        nameBox.setText("Test Title");  //Load title from Notecard class
+        nameBox.setText(name);  //Load title from Notecard class
         TextView costBox = (TextView)findViewById(R.id.costBox);
-        costBox.setText("404");
+        costBox.setText(cost);
         TextView descriptionBox = (TextView)findViewById(R.id.descriptionBox);
-        descriptionBox.setText("Test Description");
+        descriptionBox.setText(description);
         TextView lengthBox = (TextView)findViewById(R.id.lengthBox);
-        lengthBox.setText("Test Length");
+        lengthBox.setText(length);
         ImageView imageView = (ImageView)findViewById(R.id.imageView);
         imageView.setImageBitmap(image);
         imageView.setOnClickListener(new View.OnClickListener() {

@@ -22,6 +22,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.util.Vector;
 
 public class EditScreen extends AppCompatActivity {
 
@@ -32,8 +33,12 @@ public class EditScreen extends AppCompatActivity {
     private String imageLoc;
     private Bitmap image;
     private Bitmap imageDefault;
+    EditText nameBox;
+    EditText costBox;
+    //private Vector<String> data=new Vector<String>(5);
     public static final int GET_FROM_GALLERY = 3;
     ImageView imageView;
+    EditText descriptionBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +47,7 @@ public class EditScreen extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveData();
+                goToViewScreen();
             }
         });
         final RadioButton radShort = (RadioButton)findViewById(R.id.radShort);
@@ -57,7 +62,7 @@ public class EditScreen extends AppCompatActivity {
         radMed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                length="Long";
+                length="Medium";
             }
         });
         final RadioButton radLong = (RadioButton)findViewById(R.id.radLong);
@@ -67,12 +72,11 @@ public class EditScreen extends AppCompatActivity {
                 length="Long";
             }
         });
-        final EditText nameBox =  (EditText) findViewById(R.id.nameBox);
-        name=nameBox.getText().toString();
-        final EditText descriptionBox =  (EditText) findViewById(R.id.descriptionBox);
-        description=descriptionBox.getText().toString();
-        final EditText costBox =  (EditText) findViewById(R.id.costBox);
-        cost= costBox.getText().toString();
+        nameBox =  (EditText) findViewById(R.id.nameBox);
+        descriptionBox =  (EditText) findViewById(R.id.descriptionBox);
+        //description=descriptionBox.getText().toString();
+        costBox =  (EditText) findViewById(R.id.costBox);
+        //cost= costBox.getText().toString();
         /*ImageView */imageView=(ImageView) findViewById(R.id.imageView);
         image=((BitmapDrawable)imageView.getDrawable()).getBitmap();
         //imageView.setImageBitmap(image);
@@ -105,20 +109,29 @@ public class EditScreen extends AppCompatActivity {
         }
     }
     private void goToViewScreen(){
+        saveData();
         Intent intent= new Intent(this, ViewScreen.class);
+        Bundle b=new Bundle();
+        b.putStringArray("key", new String[]{name, description,cost,length,imageLoc});
+        intent.putExtras(b);
         startActivity(intent);
     }
     private void saveData() {
         //change array values and write to file(clear 1st)
+        name=nameBox.getText().toString();
+        description=descriptionBox.getText().toString();
+        cost= costBox.getText().toString();
         imageLoc=saveImage(image);
-        goToViewScreen();
+
+
+        //goToViewScreen();
     }
     private String saveImage(Bitmap bitmapImage){
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         // path to /data/data/yourapp/app_data/imageDir
         File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
         // Create imageDir
-        File mypath=new File(directory,"profile.jpg");
+        File mypath=new File(directory,"picture.jpg");
 
         FileOutputStream fos = null;
         try {
