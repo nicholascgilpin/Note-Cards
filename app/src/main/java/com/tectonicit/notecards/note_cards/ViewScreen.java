@@ -51,7 +51,7 @@ public class ViewScreen extends AppCompatActivity {
         nameBox.setText(length);
     }
     private void goToMainActivity(){
-        Intent intent= new Intent(this,HomeScreen.class);
+        Intent intent= new Intent(this,EditScreen.class);   //change to main
         startActivity(intent);
     }
     private void goToEditScreen(){
