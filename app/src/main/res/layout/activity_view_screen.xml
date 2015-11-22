@@ -8,13 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-<<<<<<< HEAD
-    tools:context="com.tectonicit.notecards.note_cards.ViewScreen"
-=======
-    tools:context="com.example.dougl.dougnotecard.ViewScreen"
->>>>>>> origin/master
-    tools:showIn="@layout/activity_view_screen">
-
+    tools:context="com.tectonicit.notecards.note_cards.ViewScreen">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
