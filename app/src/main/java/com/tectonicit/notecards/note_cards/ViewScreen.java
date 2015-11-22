@@ -58,6 +58,12 @@ public class ViewScreen extends AppCompatActivity {
         lengthBox.setText("Test Length");
         ImageView imageView = (ImageView)findViewById(R.id.imageView);
         imageView.setImageBitmap(image);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                zoomIn();
+            }
+        });
     }
     private void goToMainActivity(){
         Intent intent= new Intent(this,EditScreen.class);   //change to main
@@ -78,6 +84,11 @@ public class ViewScreen extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+    private void zoomIn(){
+        Intent intent = new Intent(this,PictureScreen.class);
+        intent.putExtra("BitmapImage",image);
+        startActivity(intent);
     }
 
 }

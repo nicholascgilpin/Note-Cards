@@ -83,7 +83,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="48dp" />
+        android:layout_marginBottom="48dp"
+        android:onClick="zoomIn()" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
