@@ -40,7 +40,7 @@ public class ViewScreen extends AppCompatActivity {
             }
         });
         TextView nameBox = (TextView)findViewById(R.id.nameBox);
-        nameBox.setText("Test Title");
+        nameBox.setText("Test Title");  //Load title from Notecard class
         TextView costBox = (TextView)findViewById(R.id.costBox);
         costBox.setText("404");
         TextView descriptionBox = (TextView)findViewById(R.id.descriptionBox);
